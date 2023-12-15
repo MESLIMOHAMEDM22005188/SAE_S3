@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link rel="icon" type="image/png" href="../../../_assets/images/favicon.png">
+    <link rel="stylesheet" href="/src/_assets/styles/AcceuilStyle.css">
+</head>
+<body>
+<div class="container">
+    <div class="top-right-image">
+        <img src="../../../_assets/images/logo.png" height="175" width="606">
+    </div>
+    <div class="image-container" id="imageContainer"> <!-- Correction : L'ID doit être "imageContainer" -->
+        <img src="../../../_assets/images/Acceuil.png" width="797" height="125">
+        <img src="../../../_assets/images/Enseignant.png" class="hidden">
+        <img src="../../../_assets/images/BUT_1.png" class="hidden">
+        <img src="../../../_assets/images/BUT_2.png" class="hidden">
+        <img src="../../../_assets/images/BUT_3.png" class="hidden">
+        <img src="../../../_assets/images/Salles_Info.png" class="hidden">
+    </div>
+    <div class="image-button" onclick="toggleImages(); hideImage();"> <!-- Correction : Appel à la fonction "toggleImages()" et "hideImage()" -->
+        <img src="../../../_assets/images/Home_button.png" width="300" height="225">
+    </div>
+</div>
+
+<script>
+    let imagesVisible = false;
+
+    function toggleImages() {
+        const imageContainer = document.getElementById('imageContainer');
+        const images = imageContainer.querySelectorAll('img.hidden');
+
+        if (!imagesVisible) {
+            images.forEach((image, index) => {
+                const angle = index * (Math.PI * 2) / images.length;
+                const radius = 200;
+
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+
+                image.style.position = 'absolute';
+                image.style.left = (x + -25) + 'px';
+                image.style.top = (y + 150) + 'px';
+                image.classList.remove('hidden');
+            });
+            imagesVisible = true;
+        } else {
+            images.forEach((image) => {
+                image.classList.add('hidden');
+            });
+            imagesVisible = false;
+        }
+    }
+
+    function hideImage() {
+        const mainImage = document.querySelector('.image-container img:not(.hidden)');
+        mainImage.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
