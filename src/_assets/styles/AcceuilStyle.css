@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+.hidden{
+    display: none;
+}
+.top-right-image {
+    position: fixed;
+    top: -30px; /* Ajustez la valeur pour l'éloignement du haut */
+    right: 1060px; /* Ajustez la valeur pour l'éloignement de la droite */
+    transform: scale(0.5);
+}
+
+.image-container {
+    position: relative;
+    top: -50px; /* Ajustez la valeur pour déplacer l'image vers le haut */
+    text-align: center;
+}
+.image-button{
+    position: relative;
+    top: 00px;
+    text-align: center;
+}
