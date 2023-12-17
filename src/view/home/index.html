@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
-<!-- ... -->
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link rel="icon" type="image/png" href="../../../_assets/images/favicon.png">
+</head>
 <body>
-<div class="container">
-    <!-- Votre contenu HTML ici -->
-</div>
-
 <script src="../../_assets/scripts/toggleImage.js"></script>
+<script src="../../_assets/scripts/HideText.js"></script>
+<link rel="stylesheet" href="../../_assets/styles/AcceuilStyle.css">
+<div class="container">
+    <div class="wrapper">
+        <svg width="900" height="200"> <!-- Définissez une largeur et une hauteur suffisamment grandes pour le texte -->
+            <text x="50%" y="40%" dy=".35em" text-anchor="middle" font-size="20" id="displayText"> <!-- Taille du texte réduite à 20px -->
+                Bienvenue au département
+                <tspan x="50%" dy="1.2em">Informatique</tspan> <!-- Ajout d'un espace -->
+            </text>
+        </svg>
+    </div>
+    <div class="top-right-image">
+        <img src="../../../_assets/images/logo.png" height="175" width="606">
+    </div>
+    <div class="image-container" id="imageContainer"> <!-- Correction : L'ID doit être "imageContainer" -->
+        <img src="../../../_assets/images/But_2.png"  width="145" height="120" class="hidden">
+        <img src="../../../_assets/images/But_3.png" width="145" height="130" class="hidden">
+        <img src="../../../_assets/images/enseignant.png" width="125" height="120" class="hidden">
+        <img src="../../../_assets/images/Salles_Informatiques.png" width="145" height="120" class="hidden">
+        <img src="../../../_assets/images/But_1.png" width="145" height="120" class="hidden">
+    </div>
+    <div class="image-button" onclick="toggleImages();"> <!-- Correction : Appel à la fonction "toggleImages()" -->
+        <img src="../../../_assets/images/Home_button.png" width="300" height="225" id="homeButton" onclick="replaceImage();">
+    </div>
+</div>
 </body>
 </html>

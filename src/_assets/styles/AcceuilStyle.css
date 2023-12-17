@@ -6,6 +6,9 @@ body {
     margin: 0;
     font-family: 'Russo One', sans-serif; /* Import de la police de caractères */
 }
+.hidden{
+    display: none;
+}
 
 svg {
     width: 100%;
