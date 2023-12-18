@@ -28,9 +28,13 @@
         <img src="../../_assets/images/Salles_Informatiques.png" width="145" height="120" class="hidden">
         <img src="../../_assets/images/But_1.png" width="145" height="120" class="hidden">
     </div>
-    <div class="image-button" onclick="toggleImages();"> <!-- Correction : Appel à la fonction "toggleImages()" -->
-        <img src="../../_assets/images/Home_button.png" width="300" height="225" id="homeButton" onclick="replaceImage();">
+    <div class="image-button">
+        <img src="../../_assets/images/Home_button.png" width="300" height="225" id="homeButton" onclick="changeText()">
     </div>
+    <div class="return-image" id="returnImage" style="display: none;">
+        <img src="../../_assets/images/retour.png" width="300" height="225" onclick="returnToInitialState()">
+    </div>
+
 </div>
 </body>
 </html>
