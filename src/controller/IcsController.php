@@ -6,8 +6,12 @@ use Exception;
 
 class IcsController
 {
+    // Method to set the timetable by ADE code and check for updates
+    public function setTimetableByCode($code) {
+        $this->checkAndUpdateFile($code);
+    }
 
-
+    // Method to check and update the ICS file
     public function checkAndUpdateFile($code) {
         $newFilePath = $this->getFilePath($code);
         $oldFilePath = $this->getOldFilePath($code);
@@ -23,16 +27,18 @@ class IcsController
         }
     }
 
+    // Method to update the display with the new ICS data
     private function updateDisplay($code) {
         // Logic to parse the ICS file and update the display
     }
 
+    // Method to get the path of the old ICS file
     private function getOldFilePath($code) {
-        // Logic to return the old file path based on the code
-        $base_path = ABSPATH . TV_ICSFILE_PATH;
-        return $base_path . 'file' . $code . '.ics';
+        $base_path = ABSPATH . ICSFILE_PATH;
+        return $base_path . 'old_file' . $code . '.ics';
     }
 
+    // Method to generate the URL to download the ICS file
     public function getUrl($code) {
         $str = strtotime("now");
         $str2 = strtotime(date("Y-m-d", strtotime('now')) . " +6 day");
@@ -42,47 +48,32 @@ class IcsController
         return $url;
     }
 
+    // Method to add a new ICS file
     public function addFile($code) {
         try {
-            $path = ABSPATH . TV_ICSFILE_PATH . "file0/" . $code . '.ics';
+            $path = ABSPATH . ICSFILE_PATH . "file0/" . $code . '.ics';
             $url = $this->getUrl($code);
-            //file_put_contents($path, fopen($url, 'r'));
-            $contents = '';
-            if (($handler = @fopen($url, "r")) !== FALSE) {
-                while (!feof($handler)) {
-                    $contents .= fread($handler, 8192);
-                }
-                fclose($handler);
-            } else {
-                throw new Exception('File open failed.');
+            $contents = file_get_contents($url);
+            if ($contents === false) {
+                throw new Exception('File download failed.');
             }
-            if ($handle = fopen($path, "w")) {
-                fwrite($handle, $contents);
-                fclose($handle);
-            } else {
-                throw new Exception('File open failed.');
-            }
+            file_put_contents($path, $contents);
         } catch (Exception $e) {
-            $this->addLogEvent($e);
+            $this->addLogEvent($e->getMessage());
         }
     }
 
+    // Method to get the path of the new ICS file
     public function getFilePath($code) {
-        $base_path = ABSPATH . TV_ICSFILE_PATH;
-
-        // Check if local file exists
-        for ($i = 0; $i <= 3; ++$i) {
-            $file_path = $base_path . 'file' . $i . '/' . $code . '.ics';
-            // TODO: Demander a propos du filesize
-            if (file_exists($file_path) && filesize($file_path) > 100)
-                return $file_path;
+        $base_path = ABSPATH . ICSFILE_PATH . "file0/";
+        $file_path = $base_path . $code . '.ics';
+        if (!file_exists($file_path)) {
+            $this->addFile($code);
         }
-
-        // No local version, let's download one
-        $this->addFile($code);
-        return $base_path . "file0/" . $code . '.ics';
+        return $file_path;
     }
 
+    // Method to add an event to the log
     public function addLogEvent($event) {
         $time = date("D, d M Y H:i:s");
         $time = "[" . $time . "] ";
