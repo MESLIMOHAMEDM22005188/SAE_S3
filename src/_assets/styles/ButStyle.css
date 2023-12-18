@@ -1,0 +1,53 @@
+/* Styles pour l'image But1 */
+#image_BUT1 {
+    width: 900px;
+    height: auto;
+    display: block;
+    position: absolute; /* Utilisation de la position absolue pour fixer l'image */
+    left: -550px; /* Positionnement spécifique à gauche */
+    top: -70px; /* Positionnement spécifique en haut */
+}
+
+/* Styles pour l'image B1G1 */
+#image_G1 {
+    width: 260px;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 800px; /* Positionnement par rapport à l'image But1 */
+    top: 80px; /* Positionnement par rapport à l'image But1 */
+}
+
+/* Styles pour l'image G2 */
+#image_G2 {
+    width: 280px;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 1050px; /* Positionnement par rapport à l'image But1 */
+    top: 260px; /* Positionnement par rapport à l'image But1 */
+}
+#image_G3 {
+    width: 230px;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 810px;
+    top: 460px;
+}
+#image_G4 {
+    width: 270px;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 550px;
+    top: 260px;
+}
+#return {
+    width: 90px;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 1430px;
+    top: 620px;
+}

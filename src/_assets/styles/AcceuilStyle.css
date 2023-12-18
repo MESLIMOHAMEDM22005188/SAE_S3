@@ -82,11 +82,12 @@ svg text {
     display: none;
 }
 
-.top-right-image {
+.logo {
     position: fixed;
-    top: -30px; /* Ajustez la valeur pour l'éloignement du haut */
-    right: 2060px; /* Ajustez la valeur pour l'éloignement de la droite */
-    transform: scale(0.5);
+    top: -30px;
+    right: 2060px;
+    transform: scale(0.25);
+    z-index: 5;
 }
 
 .image-container {
