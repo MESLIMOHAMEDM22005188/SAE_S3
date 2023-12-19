@@ -1,0 +1,7 @@
+#logo {
+    width: 200px; /* ou la taille souhaitée */
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
