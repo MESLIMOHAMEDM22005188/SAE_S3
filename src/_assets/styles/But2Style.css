@@ -4,7 +4,7 @@
     display: block;
     position: absolute; /* Utilisation de la position absolue pour fixer l'image */
     left: -1px; /* Positionnement spécifique à gauche */
-    top: -3px; /* Positionnement spécifique en haut */
+    top: -6px; /* Positionnement spécifique en haut */
 }
 
 #image_GB{

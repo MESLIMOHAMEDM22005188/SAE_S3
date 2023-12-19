@@ -1,10 +1,10 @@
-#image_BUT2 {
-    width: 915px;
+#image_BUT3 {
+    width: 276px;
     height: auto;
     display: block;
     position: absolute; /* Utilisation de la position absolue pour fixer l'image */
-    left: -550px; /* Positionnement spécifique à gauche */
-    top: -18px; /* Positionnement spécifique en haut */
+    left: -1px; /* Positionnement spécifique à gauche */
+    top: -1px; /* Positionnement spécifique en haut */
 }
 
 #image_GB{
