@@ -16,3 +16,11 @@
     color: #ffffff; /* Couleur du texte */
 }
 
+#return {
+    width: 90px;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+}
