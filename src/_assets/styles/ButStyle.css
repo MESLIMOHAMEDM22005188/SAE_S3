@@ -1,16 +1,15 @@
 /* Styles pour l'image But1 */
 #image_BUT1 {
-    width: 900px;
+    width: 285px;
     height: auto;
     display: block;
     position: absolute; /* Utilisation de la position absolue pour fixer l'image */
-    left: -550px; /* Positionnement spécifique à gauche */
-    top: -70px; /* Positionnement spécifique en haut */
+    left: -1px; /* Positionnement spécifique à gauche */
+    top: -3px; /* Positionnement spécifique en haut */
 }
 
-/* Styles pour l'image B1G1 */
 #image_G1 {
-    width: 260px;
+    width: 280px;
     height: auto;
     display: block;
     position: absolute;
