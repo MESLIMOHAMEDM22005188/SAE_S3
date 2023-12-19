@@ -41,8 +41,15 @@ body, html {
 #G4{
     width: 87px;
     height: auto;
+    top: -4px;
     position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
     left: 915px; /* Décalage de 600 pixels vers la droite */
-    top: -4px;
-
+}
+#return {
+    width: 90px;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 1440px;
+    top: 640px;
 }
