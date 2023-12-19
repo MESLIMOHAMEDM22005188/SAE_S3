@@ -1,18 +1,15 @@
 <?php
-
-
-
-
 function prepareData($value) {
     if (is_string($value)) {
-        $value = preg_replace('/\b\d{13}\b/', '', $value);
-        $value = stripslashes($value); // Retirer les slashes d'échappement
-        $value = str_replace('\\n', "\n", $value); // Remplacer les littéraux \n par de vrais sauts de ligne
+        $value = preg_replace('/\b\d{13,}\b/', '', $value);
+        $value = str_replace('\n', PHP_EOL, $value);
+        $value = stripslashes($value);
     } elseif (is_array($value)) {
         return array_map('prepareData', $value);
     }
     return $value;
 }
+
 
 /**
  * @throws Exception
@@ -38,26 +35,29 @@ function recupIcs($url) {
     }
 }
 
+$events = [];
 
+function processEvent($eventData) {
+    global $events;
 
-function processEvent($event) {
+    // Supposons que les données incluent la date, l'heure de début et l'heure de fin
+    $dayOfWeek = date('l', strtotime($eventData['DTSTART'])); // Convertit en jour de la semaine
+    $startTime = date('H:i', strtotime($eventData['DTSTART'])); // Heure de début au format HH:mm
+    $endTime = date('H:i', strtotime($eventData['DTEND'])); // Heure de fin au format HH:mm
+    $summary = $eventData['SUMMARY'];
 
-    if (isset($event['SUMMARY'])) {
-        echo "Résumé : " . $event['SUMMARY'] . "\n";
+    // Stocker les données dans le tableau global $events
+    if (!isset($events[$dayOfWeek])) {
+        $events[$dayOfWeek] = [];
     }
-    if (isset($event['DESCRIPTION'])) {
-        echo "Description : " . $event['DESCRIPTION'] . "\n";
-    }
 
-    if (isset($event['LOCATION'])) {
-        echo "Localisation : " . $event['LOCATION'] . "\n";
-    }
+    // Vous devrez ajuster la logique ci-dessous en fonction de la structure exacte de vos données ICS
+    $events[$dayOfWeek][] = [
+        'start' => $startTime,
+        'end' => $endTime,
+        'summary' => $summary
+    ];
 }
-
-
-
-
-
 
 $adeLinks = [
     //1AG1
@@ -97,4 +97,3 @@ foreach ($adeLinks as $key => $link) {
     } catch (Exception $e) {
         echo "Error for ADE code $key: " . $e->getMessage() . "\n";
     }}
-
