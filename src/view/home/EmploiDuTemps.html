@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Emploi du temps</title>
+    <style>
+        .timetable {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .timetable th, .timetable td {
+            border: 1px solid #000;
+            text-align: center;
+            vertical-align: top;
+        }
+        .timetable th {
+            background-color: #ffd700;
+            font-weight: bold;
+        }
+        .timetable td {
+            height: 60px;
+            background-color: #ffa;
+        }
+        .empty {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<?php
+// Votre script PHP ici pour définir $events en utilisant recupIcs(), processEvent(), etc.
+
+// Exemple fictif de structure de $events
+$events = [
+    // 'Lundi' => [
+//     '08:00' => ['Cours' => 'Maths', 'Enseignant' => 'M. Dupont', 'Salle' => '210'],
+//     '09:00' => ['Cours' => 'Physique', 'Enseignant' => 'Mme. Durand', 'Salle' => '310'],
+//     // ... autres créneaux horaires
+// ],
+// ... autres jours
+];
+?>
+
+<table class="timetable">
+    <tr>
+        <th>Heure</th>
+        <th>Lundi</th>
+        <th>Mardi</th>
+        <th>Mercredi</th>
+        <th>Jeudi</th>
+        <th>Vendredi</th>
+        <th>Samedi</th>
+    </tr>
+    <?php
+    for ($hour = 8; $hour <= 18; $hour++) {
+        // Affiche l'heure
+        echo "<tr>";
+    echo "<th>" . str_pad($hour, 2, "0", STR_PAD_LEFT) . ":00</th>";
+
+    // Affiche les événements ou une cellule vide pour chaque jour
+    foreach (['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'] as $day) {
+    // Détermine si un événement est prévu à cette heure pour ce jour
+    $timeSlotKey = str_pad($hour, 2, "0", STR_PAD_LEFT) . ":00";
+    if (isset($events[$day]) && is_array($events[$day]) && array_key_exists($timeSlotKey, $events[$day])) {
+    $event = $events[$day][$timeSlotKey];
+    echo "<td>{$event['Cours']}<br>{$event['Enseignant']}<br>{$event['Salle']}</td>";
+    } else {
+    echo "<td class='empty'></td>";
+    }
+    }
+    echo "</tr>";
+    }
+    ?>
+</table>
+
+</body>
+</html>
