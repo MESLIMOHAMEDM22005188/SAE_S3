@@ -1,8 +1,48 @@
-#image_up{
-    width: 280px;
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    height: 100vh; /* Utilise la hauteur totale de la fenêtre */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligne l'image en haut */
+}
+
+#image_up {
+    width: 850px;
     height: auto;
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: -6px;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 365px; /* Décalage de 600 pixels vers la droite */
+    top: -2px;
+}
+#G1{
+    width: 85px;
+    height: auto;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 535px; /* Décalage de 600 pixels vers la droite */
+    top: -2px;
+}
+#G2{
+    width: 85px;
+    height: auto;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 665px; /* Décalage de 600 pixels vers la droite */
+    top: -1px;
+}
+#G3{
+    width: 85px;
+    height: auto;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 795px; /* Décalage de 600 pixels vers la droite */
+}
+#G4{
+    width: 87px;
+    height: auto;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 915px; /* Décalage de 600 pixels vers la droite */
+    top: -4px;
+
 }

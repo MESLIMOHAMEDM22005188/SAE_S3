@@ -1,0 +1,55 @@
+.return-image {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#retour {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#BUT3{
+    width: 185px;
+    height: auto;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 755px; /* Décalage de 600 pixels vers la droite */
+    top: 105px;
+}
+#BUT2{
+    width: 185px;
+    height: auto;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 505px; /* Décalage de 600 pixels vers la droite */
+    top: 240px;
+}
+/*BUT1*/
+#BUT1{
+    width: 155px;
+    height: auto;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 565px; /* Décalage de 600 pixels vers la droite */
+    top: 460px;
+}
+#enseignant{
+    width: 155px;
+    height: auto;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 805px; /* Décalage de 600 pixels vers la droite */
+    top: 490px;
+
+}
+#SallesInformatique{
+    width: 165px;
+    height: auto;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 885px; /* Décalage de 600 pixels vers la droite */
+    top: 300px;
+}
+
+

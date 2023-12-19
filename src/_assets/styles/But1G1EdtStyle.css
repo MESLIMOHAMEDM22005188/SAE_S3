@@ -1,0 +1,18 @@
+#image_up {
+    width: 850px;
+    height: auto;
+    position: absolute;
+    left: 365px;
+    top: -20px;
+}
+
+.text {
+    position: absolute;
+    left: 630px; /* Déplacement vers la droite (ajustez selon votre mise en page) */
+    top: -10px; /* Ajustez la valeur de top selon votre mise en page */
+    font-size: 56px; /* Taille de la police du texte */
+    font-weight: bold; /* Gras */
+    text-transform: uppercase; /* Mettre le texte en majuscules */
+    color: #ffffff; /* Couleur du texte */
+}
+
