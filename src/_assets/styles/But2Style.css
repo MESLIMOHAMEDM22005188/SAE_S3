@@ -1,10 +1,10 @@
 #image_BUT2 {
-    width: 915px;
+    width: 280px;
     height: auto;
     display: block;
     position: absolute; /* Utilisation de la position absolue pour fixer l'image */
-    left: -550px; /* Positionnement spécifique à gauche */
-    top: -18px; /* Positionnement spécifique en haut */
+    left: -1px; /* Positionnement spécifique à gauche */
+    top: -3px; /* Positionnement spécifique en haut */
 }
 
 #image_GB{
@@ -26,7 +26,7 @@
 }
 
 #image_GA1{
-    width: 260px;
+    width: 270px;
     height: auto;
     display: block;
     position: absolute;
