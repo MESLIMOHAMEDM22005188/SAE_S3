@@ -10,7 +10,22 @@
     height: auto;
     position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
     left: 565px; /* Décalage de 600 pixels vers la droite */
-    top: -10px;
+    top: -12px;
+}
+#GA2{
+    width: 130px;
+    height: auto;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 725px; /* Décalage de 600 pixels vers la droite */
+    top: -5px;
+}
+
+#GB{
+    width: 130px;
+    height: auto;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 865px; /* Décalage de 600 pixels vers la droite */
+    top: -12px;
 }
 
 #return {
