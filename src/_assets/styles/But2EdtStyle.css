@@ -1,0 +1,23 @@
+#image_up {
+    width: 850px;
+    height: auto;
+    position: absolute;
+    left: 365px;
+    top: -20px;
+}
+#GA1{
+    width: 145px;
+    height: auto;
+    position: absolute; /* Ajout de la position absolue pour utiliser la propriété left */
+    left: 565px; /* Décalage de 600 pixels vers la droite */
+    top: -10px;
+}
+
+#return {
+    width: 90px;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 1420px;
+    top: 640px;
+}
