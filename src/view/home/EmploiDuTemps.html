@@ -25,23 +25,9 @@
             background-color: #fff;
         }
     </style>
+    <link rel="stylesheet" href="../../_assets/styles/PageCommune.css">
 </head>
 <body>
-
-<?php
-// Votre script PHP ici pour définir $events en utilisant recupIcs(), processEvent(), etc.
-
-// Exemple fictif de structure de $events
-$events = [
-    // 'Lundi' => [
-//     '08:00' => ['Cours' => 'Maths', 'Enseignant' => 'M. Dupont', 'Salle' => '210'],
-//     '09:00' => ['Cours' => 'Physique', 'Enseignant' => 'Mme. Durand', 'Salle' => '310'],
-//     // ... autres créneaux horaires
-// ],
-// ... autres jours
-];
-?>
-
 <table class="timetable">
     <tr>
         <th>Heure</th>
@@ -58,9 +44,7 @@ $events = [
         echo "<tr>";
     echo "<th>" . str_pad($hour, 2, "0", STR_PAD_LEFT) . ":00</th>";
 
-    // Affiche les événements ou une cellule vide pour chaque jour
     foreach (['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'] as $day) {
-    // Détermine si un événement est prévu à cette heure pour ce jour
     $timeSlotKey = str_pad($hour, 2, "0", STR_PAD_LEFT) . ":00";
     if (isset($events[$day]) && is_array($events[$day]) && array_key_exists($timeSlotKey, $events[$day])) {
     $event = $events[$day][$timeSlotKey];
@@ -73,6 +57,6 @@ $events = [
     }
     ?>
 </table>
-
+<img id="logo" src="../../_assets/images/logo.png" alt="Logo">
 </body>
 </html>
